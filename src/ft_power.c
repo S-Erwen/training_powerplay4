@@ -65,7 +65,7 @@ int		ft_power()
 				j1.hauteur++;
 			}
 			ft_putstr("test0\n");			
-			//print[j1.hauteur][j1.largeur] = j1.jeton;
+			print[j1.hauteur][j1.largeur] = j1.jeton;
 			ft_putstr("test1\n");
 			nb_for_soluce = ft_soluce(j1.hauteur, j1.largeur, nb_for_soluce, j1.jeton);
 			if (nb_for_soluce == 4)

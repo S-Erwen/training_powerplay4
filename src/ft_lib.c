@@ -26,11 +26,7 @@ void    ft_putstrs(char **strs)
     }
 }
 
-
-
-
-
-/*void	ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
 	if (nb >= 0 && nb <= 9)
 		ft_putchar(nb + '0');
@@ -49,4 +45,4 @@ void    ft_putstrs(char **strs)
 	}
 	else
 		ft_putchar(nb);
-}*/
+}
