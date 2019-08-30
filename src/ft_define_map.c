@@ -1,30 +1,5 @@
 #include "../include/ft_include.h"
 
-char	**ft_void_map(void)
-{
-	char	**map;
-
-	if (!(map = (char **)malloc(sizeof(char *) * BUFSIZE + 1)))
-		return (NULL);
-	
-	map[0] =  "+---+---+---+---+---+---+---+\n";
-	map[1] =  "|   |   |   |   |   |   |   |\n";
-	map[2] =  "+---+---+---+---+---+---+---+\n";
-	map[3] =  "|   |   |   |   |   |   |   |\n";
-	map[4] =  "+---+---+---+---+---+---+---+\n";
-	map[5] =  "|   |   |   |   |   |   |   |\n";
-	map[6] =  "+---+---+---+---+---+---+---+\n";
-	map[7] =  "|   |   |   |   |   |   |   |\n";
-	map[8] =  "+---+---+---+---+---+---+---+\n";
-	map[9] =  "|   |   |   |   |   |   |   |\n";
-	map[10] = "+---+---+---+---+---+---+---+\n";
-	map[11] = "|   |   |   |   |   |   |   |\n";
-	map[12] = "+---+---+---+---+---+---+---+\n";
-	map[13] = "\0";
-
-	return (map);
-}
-
 int		ft_int_to_ptrchared(int nb)
 {
 	int temp;
@@ -62,4 +37,37 @@ int		ft_soluce(int largeur, int hauteur, int soluce, int jeton)
 	}
 	free(map);
 	return (soluce);
+}
+
+char    **init_tab(int h, int l, char init_val)
+{
+    int i;
+    int j;
+    char **tab;
+
+    i = 0;
+    if ((tab = malloc(sizeof(char *) * (h + 1))) == NULL)
+        return (NULL);
+    while (i < h)
+    {
+        if ((tab[i] = malloc(sizeof(char) * (l + 1))) == NULL)
+            return (NULL);
+        j = 0;
+        while (j < l)
+            tab[i][j++] = init_val;
+        tab[i][j] = '\0';
+        i++;
+    }
+    tab[i] = NULL;
+
+    i = 0;
+    while (tab[i])
+    {
+        if (i % 2 == 0)
+            strcpy(tab[i], "+---+---+---+---+---+---+---+\n");
+        else
+            strcpy(tab[i], "|   |   |   |   |   |   |   |\n");
+        i++;
+    }
+    return (tab); 
 }

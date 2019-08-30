@@ -18,13 +18,17 @@ int		ft_power()
 	j2.hauteur = 11;
 	nb_for_soluce = 0;
 
-	if (!(soluce = (char **)malloc(sizeof(char *) * BUFSIZE + 1)))
-		return (0);
-	if (!(print = (char **)malloc(sizeof(char *) * BUFSIZE + 1)))
-		return (0);		
+	/* Malloc des tableau 
+	 * Soluce pour remplacer les jetons par les chiffres
+	 * Print pour l'utilisateur                          */
 
+	soluce = init_tab(31, 13, ' ');
+	print = init_tab(31, 13, ' ');
+
+	/* Soluce et print == Map vide */
 	soluce = ft_void_map();
 	print = ft_void_map();
+
 	language = ft_language();
 	if (language == 1)
 		player_playing = ft_print_menu_fr();
@@ -64,8 +68,7 @@ int		ft_power()
 				}
 				j1.hauteur++;
 			}
-			if (!(print[j1.hauteur] = (char *)malloc(sizeof(char) * 30 + 1)))
-				return (0);
+
 			print[j1.hauteur][j1.largeur] = j1.jeton;
 			ft_putstr("test\n");
 			nb_for_soluce = ft_soluce(j1.hauteur, j1.largeur, nb_for_soluce, j1.jeton);
