@@ -70,9 +70,10 @@ int		ft_print_menu_fr()
 	scanf("%s", plr2);
 	ft_putstr("Choix aleatoire du joueur qui commence :\n");
 	
-	// srand(time(NULL));
-	// player = (rand() % (2 - 1)) + 1;
+	//srand(time(NULL));
+	//player = (rand() % (2 - 1)) + 1;
 	player = 1;
+	
 	ft_putstr("3..\n");
 	sleep(1);
 	ft_putstr("2..\n");

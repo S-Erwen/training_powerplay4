@@ -4,10 +4,10 @@ HEADER =
 OBJS = ${SRCS:.c=.o}
 
 .c.o: $(HEADER)
-		gcc -Wall -Wextra -Werror -I include -c $< -o ${<:.c=.o}
+		clang -Wall -Wextra -Werror -I include -c $< -o ${<:.c=.o}
 
 $(NAME) : $(OBJS)
-		gcc $(OBJS) -o $(NAME)
+		clang $(OBJS) -o $(NAME)
 
 all : $(NAME)
 
